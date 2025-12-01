@@ -9,16 +9,12 @@ var path: String = "res://day_1/input.txt"
 
 func _run() -> void:
 
-	if not FileAccess.file_exists(path):
-		push_error("File path not found.")
-
 	var file = FileAccess.open(path,FileAccess.READ)
-	if not file:
-		push_error("File load unsuccessful.")
+	assert(file, "Failed to read file.")
 
+	var dial: int = START
 	var p_1: int = 0
 	var p_2: int = 0
-	var dial: int = START
 
 	while not file.eof_reached():
 		var line: String = file.get_line().strip_edges()
