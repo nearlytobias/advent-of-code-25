@@ -3,7 +3,7 @@ extends EditorScript
 
 const MIN: int = 0
 const START: int = 50
-const MAX: int = 99
+const MAX: int = 100
 
 var path: String = "res://day_1/input.txt"
 var password: int = 0
@@ -20,14 +20,10 @@ func _run() -> void:
 		var rotation: String = file.get_line()
 		if rotation.begins_with("L"):
 			for i in int(rotation.erase(0,1)):
-				dial -=1
-				if dial < MIN:
-					dial = MAX
+				dial = wrapi(dial -1, 0, 100)
 		else:
 			for i in int(rotation.erase(0,1)):
-				dial +=1
-				if dial > MAX:
-					dial = MIN
+				dial = wrapi(dial +1, 0, 100)
 					
 		if dial == MIN:
 			password+=1
