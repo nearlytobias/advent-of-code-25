@@ -1,9 +1,12 @@
 @tool
+class_name Lobby
 extends EditorScript
+## Advent of Code 2025 - Day 3: Lobby
+## https://adventofcode.com/2025/day/3
 
 var path: String = "res://day_3/input.txt"
 var total: int
-#var digits: Array = []
+
 
 func _run() -> void:
 
@@ -12,24 +15,24 @@ func _run() -> void:
 
 
 	while not file.eof_reached():
-		var bank : int = int(file.get_line())
-		var cursor: int
+		var bank : String = file.get_line().strip_edges()
 		var l: int = 0
-		var r: int = bank % 10
+		var r: int = 0
+		var l_pos: int
 
-		bank /=10
-
-		while bank > 0:
-			cursor = bank % 10
+		for i in bank.length() - 1:
+			var cursor : int = int(bank[i])
 			if cursor > l:
-				if l > r:
-					r = l
 				l = cursor
-			bank /= 10
+				l_pos = i
+
+		for i in range(l_pos + 1, bank.length()):
+			var cursor: int = int(bank[i])
+			if cursor > r:
+				r = cursor
+
 
 		var num: int = (l*10) + r
-		#digits.append(num)
 		total += num
 
-	#print(digits)
 	print(total)
