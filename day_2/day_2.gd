@@ -1,7 +1,7 @@
 @tool
 class_name GiftShop
 extends EditorScript
-## Advent of Code 2025 - Day Two: Gift Shop
+## Advent of Code 2025 - Day 2: Gift Shop
 ## https://adventofcode.com/2025/day/2
 
 enum Mode{ PART_ONE, PART_TWO }

@@ -1,6 +1,6 @@
 @tool
 extends EditorScript
-## Advent of Code 2025 - Day One: Secret Entrance
+## Advent of Code 2025 - Day 1: Secret Entrance
 ## https://adventofcode.com/2025/day/1
 
 const START: int = 50
