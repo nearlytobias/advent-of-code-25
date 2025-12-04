@@ -4,8 +4,8 @@ extends EditorScript
 ## Advent of Code 2025 - Day 2: Gift Shop
 ## https://adventofcode.com/2025/day/2
 
-enum Mode{ PART_ONE, PART_TWO }
-var mode = Mode.PART_TWO
+enum Part{ ONE, TWO }
+var mode = Part.TWO
 
 var path: String = "res://day_2/input.txt"
 var invalid_ids: Array = []
@@ -24,7 +24,7 @@ func _run() -> void:
 	var lower: int
 
 	match mode:
-		Mode.PART_ONE:
+		Part.ONE:
 
 			for ids in ranges:
 				id_pair = ids.split("-")
@@ -44,7 +44,7 @@ func _run() -> void:
 						invalid_ids.append(i)
 						total += i
 
-		Mode.PART_TWO:
+		Part.TWO:
 
 			for ids in ranges:
 				id_pair = ids.split("-")
