@@ -2,21 +2,21 @@
 @abstract class_name EditorScriptTimed
 extends EditorScript
 
-var start_time: int
+var start: int
 var duration: int
 
 func _run() -> void:
-	start_time = Time.get_ticks_usec()
+	start = Time.get_ticks_usec()
 	_on_run()
-	duration = Time.get_ticks_usec() - start_time
+	duration = Time.get_ticks_usec() - start
 
 	# Format output based on duration
 	if duration < 1000:
-		print("%s completed in: %d μs" % [self, duration])
+		print("Completed in: %d μs %s" % [duration, self])
 	elif duration < 1_000_000:
-		print("%s completed in: %.2f ms" % [self, duration / 1000.0])
+		print("Completed in: %.2f ms %s" % [duration / 1000.0, self])
 	else:
-		print("%s completed in: %.2f s" % [self, duration / 1_000_000.0])
+		print("Completed in: %.2f s %s" % [duration / 1_000_000.0, self])
 
 ## Execute script here
 ## Make sure to return explicitly (for timer accuracy)
