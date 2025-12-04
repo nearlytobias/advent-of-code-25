@@ -1,8 +1,9 @@
 @tool
-class_name GiftShop
-extends EditorScript
+class_name GiftShopIntMethods
+extends EditorScriptTimed
 ## Advent of Code 2025 - Day 2: Gift Shop
 ## https://adventofcode.com/2025/day/2
+## Int method faster for Part 1
 
 enum Part{ ONE, TWO }
 var mode = Part.TWO
@@ -11,7 +12,8 @@ var path: String = "res://day_2/input.txt"
 var invalid_ids: Array = []
 var total: int
 
-func _run() -> void:
+
+func _on_run() -> void:
 
 	var file = FileAccess.open(path, FileAccess.READ)
 	assert(file, "Failed to read file.")
@@ -77,3 +79,4 @@ func _run() -> void:
 							break
 
 	print("Total: %s" % total)
+	return
