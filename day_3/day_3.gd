@@ -1,5 +1,5 @@
 @tool
-class_name LobbyPartOne
+class_name Lobby
 extends EditorScript
 ## Advent of Code 2025 - Day 3: Lobby
 ## https://adventofcode.com/2025/day/3
