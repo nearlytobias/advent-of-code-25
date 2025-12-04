@@ -1,17 +1,17 @@
 @tool
 class_name Lobby
-extends EditorScript
+extends EditorScriptTimed
 ## Advent of Code 2025 - Day 3: Lobby
 ## https://adventofcode.com/2025/day/3
 
 enum Part{ ONE, TWO }
-var mode = Part.TWO
+var mode = Part.ONE
 
 var path: String = "res://day_3/input.txt"
 var total: int
 
 
-func _run() -> void:
+func _on_run() -> void:
 
 	var file = FileAccess.open(path, FileAccess.READ)
 	assert(file, "Failed to read file.")
@@ -66,3 +66,4 @@ func _run() -> void:
 				total += int(num)
 
 	print(total)
+	return

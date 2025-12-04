@@ -1,5 +1,6 @@
 @tool
-extends EditorScript
+class_name SecretEntrance
+extends EditorScriptTimed
 ## Advent of Code 2025 - Day 1: Secret Entrance
 ## https://adventofcode.com/2025/day/1
 
@@ -7,7 +8,7 @@ const START: int = 50
 
 var path: String = "res://day_1/input.txt"
 
-func _run() -> void:
+func _on_run() -> void:
 
 	var file = FileAccess.open(path,FileAccess.READ)
 	assert(file, "Failed to read file.")
@@ -31,3 +32,4 @@ func _run() -> void:
 
 	print("Part one: %d" % p_1)
 	print("Part two: %d" % p_2)
+	return
