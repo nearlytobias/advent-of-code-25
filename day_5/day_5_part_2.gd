@@ -1,5 +1,5 @@
 @tool
-class_name Cafeteria
+class_name CafeteriaPartTwo
 extends EditorScriptTimed
 
 var path: String = "res://day_5/input.txt"

@@ -1,5 +1,5 @@
 @tool
-class_name Cafeteria
+class_name CafeteriaPartOne
 extends EditorScriptTimed
 
 enum DataType {RANGE, ID}
